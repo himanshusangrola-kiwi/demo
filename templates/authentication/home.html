@@ -1,0 +1,14 @@
+{% if user.is_authenticated %}
+    <p>Hi {{ user.full_name }}, Welcome to Dashboard</p>
+    <button type="button" ><a href="">Books</a></button><br>
+    <button type="button" ><a href="">Students</a></button><br>
+    <button type="button" ><a href="">Companies</a></button><br>
+    <button type="button" ><a href="{% url 'show' %}">Colleges</a></button><br>
+    <br>
+    <br>
+	<p><a href="{% url 'logout' %}">Log Out</a></p>
+{% else %}
+	<p>You are not logged in!</p>
+	<a href="{% url 'login' %}">Log In</a> / 
+	<a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}

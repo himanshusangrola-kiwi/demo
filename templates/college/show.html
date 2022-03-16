@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <table >  
+            <tr>  
+                <th>College ID</th> 
+                <th>College Name</th> 
+                <th>College Email</th> 
+                <th>College Contact</th> 
+                <th>College Address</th>  
+                <th>Actions</th> 
+            </tr>    
+                {% if colleges %}  
+                    {% for college in colleges %}
+                        <tr>  
+                            <td>{{ college.id }}</td>  
+                            <td>{{ college.name }}</td>  
+                            <td>{{ college.email }}</td>  
+                            <td>{{ college.phone }}</td>  
+                            <td>{{ college.address }}</td>  
+                            <td> 
+                                <a href="{% url 'edit' college.id %}">Edit</a>  
+                                <a href="{% url 'delete' college.id %}">Delete</a>  
+                            </td>  
+                        </tr>
+                    {% endfor %}
+                {% else %}
+                    <p>NO DATA </p>
+                {% endif %}  
+        </table>  
+        <br>  
+        <br>  
+        <center><a href="{% url 'add' %}">Add New Record</a></center> 
+        <a href="{% url 'logout' %}">Log Out</a>
+    </body>  
+</html>  

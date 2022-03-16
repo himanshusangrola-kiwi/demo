@@ -1,0 +1,6 @@
+<form action="{% url 'delete' college.id %}" method="POST">
+    {% csrf_token %}
+    DELETE COLLEGE ENTRY?
+    <input type="submit" value="YES">
+    <button type="button"><a href = "{% url 'show' % }">NO</a></button>
+</form>
